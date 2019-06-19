@@ -1,0 +1,7 @@
+*.o
+*.so
+*/config.mk
+./jprop/sprop
+./jselp/sselp
+./jwarp/swarp
+./jlsw/lsw
