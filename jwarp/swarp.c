@@ -31,5 +31,5 @@ Usage:
 	XWarpPointer(dpy, None, RootWindow(dpy, DefaultScreen(dpy)), 0, 0, 0, 0, x, y);
 	XSetInputFocus(dpy, PointerRoot, RevertToPointerRoot, CurrentTime);
 	XCloseDisplay(dpy);
-	return 0;
+	return EXIT_SUCCESS;
 }

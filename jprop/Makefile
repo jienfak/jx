@@ -1,6 +1,6 @@
 # sprop - simple X property utility
 
-include config.mk
+include ../config.mk
 
 SRC = sprop.c
 OBJ = ${SRC:.c=.o}
@@ -17,7 +17,7 @@ options:
 	@echo CC $<
 	@${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.mk
+${OBJ}: ../config.mk
 
 sprop: ${OBJ}
 	@echo CC -o $@
@@ -30,7 +30,7 @@ clean:
 dist: clean
 	@echo creating dist tarball
 	@mkdir -p sprop-${VERSION}
-	@cp -R LICENSE Makefile README config.mk sprop.1 ${SRC} sprop-${VERSION}
+	@cp -R LICENSE Makefile README ../config.mk sprop.1 ${SRC} sprop-${VERSION}
 	@tar -cf sprop-${VERSION}.tar sprop-${VERSION}
 	@gzip sprop-${VERSION}.tar
 	@rm -rf sprop-${VERSION}

@@ -1,7 +1,7 @@
 # swarp - simple pointer warp
 #   (C)opyright MMVI Anselm R. Garbe
 
-include config.mk
+include ../config.mk
 
 SRC = swarp.c
 OBJ = ${SRC:.c=.o}
@@ -19,7 +19,7 @@ options:
 	@echo CC $<
 	@${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.mk
+${OBJ}: ../config.mk
 
 swarp: ${OBJ}
 	@echo LD $@
@@ -33,7 +33,7 @@ clean:
 dist: clean
 	@echo creating dist tarball
 	@mkdir -p swarp-${VERSION}
-	@cp -R LICENSE Makefile README config.mk ${SRC} swarp-${VERSION}
+	@cp -R LICENSE Makefile README ../config.mk ${SRC} swarp-${VERSION}
 	@tar -cf swarp-${VERSION}.tar swarp-${VERSION}
 	@gzip swarp-${VERSION}.tar
 	@rm -rf swarp-${VERSION}

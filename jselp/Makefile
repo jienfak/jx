@@ -1,6 +1,6 @@
 # sselp - simple print selection
 
-include config.mk
+include ../config.mk
 
 SRC = sselp.c
 OBJ = ${SRC:.c=.o}
@@ -17,7 +17,7 @@ options:
 	@echo CC $<
 	@${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.mk
+${OBJ}: ../config.mk
 
 sselp: ${OBJ}
 	@echo CC -o $@
@@ -30,7 +30,7 @@ clean:
 dist: clean
 	@echo creating dist tarball
 	@mkdir -p sselp-${VERSION}
-	@cp -R LICENSE Makefile README config.mk ${SRC} sselp-${VERSION}
+	@cp -R LICENSE Makefile README ../config.mk ${SRC} sselp-${VERSION}
 	@tar -cf sselp-${VERSION}.tar sselp-${VERSION}
 	@gzip sselp-${VERSION}.tar
 	@rm -rf sselp-${VERSION}
